@@ -1,0 +1,15 @@
+.app-container {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .app-container {
+    font-family: Arial, sans-serif;
+  }
+  
+  .router-outlet {
+    margin: 20px;
+  }
+  
+  

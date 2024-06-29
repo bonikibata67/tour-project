@@ -1,0 +1,13 @@
+<!-- <p>tour works!</p> -->
+<div class="tour-list">
+    <h2>Available Tours</h2>
+    <ul>
+      <li *ngFor="let tour of tours">
+        <h3>{{ tour.name }}</h3>
+        <p>{{ tour.description }}</p>
+        <button (click)="selectTour(tour)">Select Tour</button>
+      </li>
+    </ul>
+  </div>
+  
+

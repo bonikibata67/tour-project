@@ -1,0 +1,26 @@
+<div class="booking-list">
+    <h2>Manage Bookings</h2>
+    <ul>
+      <li *ngFor="let booking of bookings">
+        <h3>{{ booking.tour }}</h3>
+        <p>{{ booking.username }}</p>
+        <button (click)="deleteBooking(booking.id)">Delete Booking</button>
+      </li>
+    </ul>
+    <div *ngIf="selectedTour">
+      <h3>Book Tour: {{ selectedTour.name }}</h3>
+      <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" formControlName="customerName">
+        
+        <label for="hotel">Select Hotel:</label>
+        <select id="hotel" formControlName="hotel">
+          <option *ngFor="let hotel of selectedTour.hotels" [value]="hotel.name">{{ hotel.name }}</option>
+        </select>
+        
+        <button type="submit">Book Tour</button>
+      </form>
+    </div>
+  </div>
+
+

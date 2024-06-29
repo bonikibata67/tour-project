@@ -1,0 +1,46 @@
+<!-- <p>signup works!</p> -->
+ <!-- <p>signup works!</p> -->
+<!-- <form (ngsubmit)="onsubmit()"></form> -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-wrapper">
+      <h1 align="center">Signup</h1>
+  
+      <div class="form-group">
+        <label> Username: </label> <br />
+        <input type="text" id="username" formControlName="username" placeholder="Enter Username" />
+        <div *ngIf="form.get('username')?.touched && form.get('username')?.invalid">
+          <p *ngIf="form.get('username')?.hasError('required')">Username is required</p>
+          <p *ngIf="form.get('username')?.hasError('pattern')">Username can only contain letters, numbers, and underscores</p>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label> Email: </label> <br />
+        <input type="text" id="email" formControlName="email" class="form-control" placeholder="Enter Email" />
+        <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+          <p *ngIf="form.get('email')?.hasError('required')">Email is required</p>
+          <p *ngIf="form.get('email')?.hasError('email')">Email is not valid</p>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label> Password: </label> <br />
+        <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter Password" />
+        <div *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+          <p *ngIf="form.get('password')?.hasError('required')">Password is required</p>
+          <p *ngIf="form.get('password')?.hasError('pattern')">Password must contain at least one uppercase letter, one lowercase letter, one number, and be at least 6 characters long</p>
+        </div>
+      </div>
+  
+      <div align="center" class="form-group">
+        <button type="submit" id="signup" class="btn btn-primary">Signup</button>
+      </div>
+  
+      <div class="signup-link">
+        <p>Already have an account? <a href="./login.html"> Login </a> instead</p>
+      </div>
+    </div>
+  </form>
+  
+
+

@@ -1,0 +1,25 @@
+<div class="main-container">
+  <div class="main-box">
+    <div class="tour-container">
+      <h1>Featured Tours</h1>
+      <div id="tour-list" class="tour-list">
+        <div *ngFor="let tour of tours" class="tour-item">
+          <h3>{{ tour.name }}</h3>
+          <p>{{ tour.description }}</p>
+          <button (click)="selectTour(tour)">Select Tour</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hotel-container" *ngIf="selectedTour">
+      <h4>Best Hotels for {{ selectedTour.name }}</h4>
+      <div id="hotel-list" class="hotel-list">
+        <div *ngFor="let hotel of selectedTour.hotels" class="hotel-item">
+          <h3>{{ hotel.name }}</h3>
+          <p>{{ hotel.description }}</p>
+          <button (click)="selectHotel(hotel)">Select Hotel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
