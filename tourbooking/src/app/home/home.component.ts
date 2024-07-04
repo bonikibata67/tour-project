@@ -14,9 +14,9 @@ import { Tour,Hotel } from '../models';
 export class HomeComponent implements OnInit {
   tours: Tour[] = [];
   selectedTour: Tour | null = null;
-  private tourService = inject(TourService);
+  // private tourService = inject(TourService);
 
-  constructor() {}
+  constructor(private tourService:TourService) {}
 
   ngOnInit() {
     this.tourService.getTours().subscribe((tours) => {

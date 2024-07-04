@@ -7,6 +7,16 @@ export interface Tour {
   price: string;
   hotels: Hotel[];
 }
+export interface addTour {
+  image: string;
+  name: string;
+  destination: string;
+  description: string;
+  price: string;
+}
+export interface addResponse {
+  message: string;
+}
 
 export interface Booking {
 
